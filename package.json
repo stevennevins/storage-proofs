@@ -1,0 +1,36 @@
+{
+  "name": "storage-proofs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevennevins/storage-proofs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevennevins/storage-proofs/issues"
+  },
+  "homepage": "https://github.com/stevennevins/storage-proofs#readme",
+  "dependencies": {
+    "@ethereumjs/block": "^5.3.0",
+    "@ethereumjs/common": "^4.4.0",
+    "@ethereumjs/rlp": "^5.0.2",
+    "@ethereumjs/trie": "^6.2.1",
+    "@ethereumjs/util": "^9.1.0",
+    "viem": "^2.7.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "dotenv": "^16.4.7",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.1"
+  }
+}
