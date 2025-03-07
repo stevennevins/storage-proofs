@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
+import {StorageSlotProofVerifierLib} from "./StorageProofVerifierLib.sol";
+
 contract Storage {
     uint256 private _value;
 
@@ -16,5 +18,23 @@ contract Storage {
 
     function get() external view returns (uint256) {
         return _value;
+    }
+
+    function verify(
+        bytes memory blockHeaderRLP,
+        bytes32 blockHash,
+        address account,
+        bytes[] memory accountProof,
+        bytes32 slot,
+        bytes[] memory storageProof
+    ) external pure returns (uint256 value, bytes32 storageRoot) {
+        return StorageSlotProofVerifierLib.verify(
+            blockHeaderRLP,
+            blockHash,
+            account,
+            accountProof,
+            slot,
+            storageProof
+        );
     }
 }

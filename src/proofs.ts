@@ -1,5 +1,4 @@
-import { Hex, PublicClient } from 'viem'
-import { GetProofReturnType } from 'viem'
+import { Hex, PublicClient, GetProofReturnType } from 'viem'
 
 /**
  * Fetches proof data for a contract's storage at a specific slot

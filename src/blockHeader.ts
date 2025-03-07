@@ -5,6 +5,38 @@ import type { PublicClient } from 'viem'
 import { BlockHeaderOptions } from './types'
 
 /**
+ * Block header fields and their Ethereum upgrade associations:
+ *
+ * Base Fields (Pre-London):
+ * - parentHash: Hash of the parent block
+ * - uncleHash/sha3Uncles: Hash of the uncle blocks
+ * - coinbase/miner: Address of the miner
+ * - stateRoot: Root of the state trie
+ * - transactionsTrie/transactionsRoot: Root of the transactions trie
+ * - receiptTrie/receiptsRoot: Root of the receipts trie
+ * - logsBloom: Bloom filter of logs
+ * - difficulty: Block difficulty (0 post-merge)
+ * - number: Block number
+ * - gasLimit: Maximum gas allowed
+ * - gasUsed: Gas used in the block
+ * - timestamp: Block timestamp
+ * - extraData: Extra data field
+ * - mixHash: Mix hash for PoW (repurposed post-merge)
+ * - nonce: Nonce for PoW (repurposed post-merge)
+ *
+ * London Upgrade (EIP-1559):
+ * - baseFeePerGas: Base fee per gas unit
+ *
+ * Shanghai Upgrade:
+ * - withdrawalsRoot: Root hash of withdrawals
+ *
+ * Cancun Upgrade:
+ * - blobGasUsed: Gas used by blobs
+ * - excessBlobGas: Excess blob gas
+ * - parentBeaconBlockRoot: Parent beacon block root
+ */
+
+/**
  * Creates a BlockHeader instance from block data
  * @param block The block data retrieved from a client
  * @param options Options for creating the BlockHeader
